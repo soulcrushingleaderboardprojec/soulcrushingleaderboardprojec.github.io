@@ -333,11 +333,11 @@ function open_page(page_num) {
   if (page_num == 1) {
     g("menu-page").style.display = "";
   } else if (page_num == 2) {
-    g("tower-lookup-page").style.display = "";
+    g("tower-lookup-page").style.display = "none";
   } else if (page_num == 3) {
-    g("leaderboard-page").style.display = "";
+    g("leaderboard-page").style.display = "none";
   } else if (page_num == 4) {
-    g("game-links-page").style.display = "";
+    g("game-links-page").style.display = "none";
   }
 }
 const url = window.location.search;
