@@ -329,7 +329,7 @@ function open_page(page_num) {
   g("menu-page").style.display = "none";
   g("tower-lookup-page").style.display = "none";
   g("leaderboard-page").style.display = "none";
-  g("game-links-page").style.display = "none";
+  g("game-links-page").style.display = "";
   if (page_num == 1) {
     g("menu-page").style.display = "";
   } else if (page_num == 2) {
