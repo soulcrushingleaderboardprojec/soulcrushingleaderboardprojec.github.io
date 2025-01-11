@@ -91,7 +91,7 @@ all_towers = [
   {"id": 90, "abbr": "ToIG", "name": "Tower of Inferno Galore", "diff": 1103, "places": [["CSCD", "Scope 1"]]},
   {"id": 91, "abbr": "ToG", "name": "Tower of Gelidity", "diff": 1109, "places": [["CSCD", "Scope 2"]]},
   {"id": 92, "abbr": "ToRRA", "name": "Tower of Ruthless Royal Architecture", "diff": 1114, "places": [["CSCD", "Scope 1"]]},
-  {"id": 93, "abbr": "ToTM", "name": "Tower of Thin Mints", "diff": 1172, "places": [["JToH", "The Eternal Abyss"], ["CSCD", "Scope 3"]]},
+  {"id": 93, "abbr": "ToTM", "name": "Tower of Thin Mints", "diff": 1172, "places": [["Place", ""]], "game": "https://www.roblox.com/games/10357398778/Thin-Mints-Quemeful"},
   {"id": 94, "abbr": "ToU", "name": "Tower of Unorthodoxy", "diff": 1142, "places": [["CSCD", "Scope 3"]]},
   {"id": 95, "abbr": "ToNI", "name": "Tower of Necrotic Incantation", "diff": 1150, "places": [["CSCD", "Scope 2"]]},
   {"id": 96, "abbr": "STONE", "name": "S.T.O.N.E Facility", "diff": 1159, "places": [["CSCD", "Scope 2"]]},
