@@ -18,6 +18,6 @@ function open_page(page_num) {
   } else if (page_num == 3) {
     g("leaderboard-page").style.display = "";
   } else if (page_num == 4) {
-    g("games-page").style.display = "";
+    g("game-links-page").style.display = "";
   }
 }
