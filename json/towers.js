@@ -175,7 +175,7 @@ all_towers = [
   {"id": 174, "abbr": "ToHN", "name": "Tower of Hellish Nightmares", "diff": 1062, "places": [["JToH", "The Eternal Abyss"]]},
   {"id": 175, "abbr": "ToUP", "name": "Tower of Unrelenting Precipice", "diff": 1087, "places": [["JToH", "The Eternal Abyss"]]},
   {"id": 176, "abbr": "ToQ", "name": "Tower of Quadrilaterals", "diff": 1096, "places": [["JToH", "The Eternal Abyss"]]},
-  {"id": 177, "abbr": "ToOE", "name": "Tower of Otherworldly Expertise", "diff": 1108, "places": [["Place"]]}, "game": "https://www.roblox.com/games/10287166926/Tower-of-Otherworldly-Expertise-UPDATED"
+  {"id": 177, "abbr": "ToOE", "name": "Tower of Otherworldly Expertise", "diff": 1108, "places": [["Place", ""]], "game": "https://www.roblox.com/games/10287166926/Tower-of-Otherworldly-Expertise-UPDATED"
   {"id": 178, "abbr": "ToTO", "name": "Tower of Tortuous Oblivion", "diff": 1139, "places": [["JToH", "The Eternal Abyss"]]},
   {"id": 179, "abbr": "ToC", "name": "Tower of Centchade", "diff": 1148, "places": [["JToH", "The Eternal Abyss"]]},
   {"id": 180, "abbr": "ToHG", "name": "Tower of Heaven's Gate", "diff": 1177, "places": [["JToH", "The Eternal Abyss"], ["CTT", "Domain 1"]]},
