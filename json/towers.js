@@ -98,7 +98,7 @@ all_towers = [
   {"id": 97, "abbr": "ToPA", "name": "Tower of Pulsating Ambitions", "diff": 1165, "places": [["CSCD", "Scope 1"]]},
   {"id": 98, "abbr": "ToJ", "name": "Tower of Jocundigluey", "diff": 1173, "places": [["CSCD", "Scope 3"], ["CTT", "Domain 1"]]},
   {"id": 99, "abbr": "ToJJ", "name": "Tower of Jabberwock Jagger", "diff": 1200, "places": [["CSCD", "Scope 3"], ["CTT", "Domain 1"]]},
-  {"id": 100, "abbr": "ToTW", "name": "Tower of Thje Wall", "diff": 1213, "places": [["JToH", "The Eternal Abyss"], ["CSCD", "Scope 3"]]},
+  {"id": 100, "abbr": "ToTW", "name": "Tower of Thje Wall", "diff": 1213, "places": [["Place", ""]], "game": "https://www.roblox.com/games/10059580100/thje-wall"},
   {"id": 101, "abbr": "ToFP", "name": "Tower of Futile Perusal", "diff": 1238, "places": [["CSCD", "Scope 2"], ["TBP", "Plate 11"]]},
   {"id": 102, "abbr": "ToLP", "name": "Tower of Lucas Penteado", "diff": 1263, "places": [["CSCD", "Scope 1"]]},
   {"id": 103, "abbr": "CoTEC", "name": "Citadel of The Eternal Calamity", "diff": 1312, "places": [["JToH", "The Eternal Abyss"], ["CSCD", "Scope 1"]]},
@@ -513,6 +513,6 @@ all_towers = [
   {"id": 512, "abbr": "ToTJJ", "name": "Tower of The Jump Junkyard", "diff": 942, "places": [["CTT", "Domain 1"]]},
   {"id": 513, "abbr": "SoIM", "name": "Steeple of Irrelevant Movement", "diff": 995, "places": [["CKR", "Region 2"]]},
   {"id": 514, "abbr": "ToMJ", "name": "Tower of Miserable Journeys", "diff": 1068, "places": [["Place", ""]], "game": "https://www.roblox.com/games/7200776444/Tower-of-Miserable-Journeys-itemed"},
-  {"id": 515, "abbr": "SS", "name": "Sans Steeple", "diff": 1215, "places": [["JToH", "The Eternal Abyss"]]},
+  {"id": 515, "abbr": "SS", "name": "Sans Steeple", "diff": 1215, "places": [["Place", ""]], "game": "https://www.roblox.com/games/13842727197/Sans-Steeple"},
   {"id": 516, "abbr": "ToWC", "name": "Tower of Weird Core", "diff": 1267, "places": [["CTT", "Domain 1"]]},
 ]
