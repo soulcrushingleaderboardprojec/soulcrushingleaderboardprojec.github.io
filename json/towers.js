@@ -283,7 +283,7 @@ all_towers = [
   {"id": 282, "abbr": "ToCUP", "name": "Tower of Cruel Underestimated Parkour", "diff": 1090, "places": [["ZToA", "Regret's Cave"], ["CTT", "Domain 1"]]},
   {"id": 283, "abbr": "ToPT", "name": "Tower of Precise Turns", "diff": 1114, "places": [["Place", ""]], "game": "https://roblox.com/games/10260790188/tower-of-precise-turns"},
   {"id": 284, "abbr": "ToYH", "name": "Tower of Yummy Hotdog", "diff": 1095, "places": [["Place", ""]], "game": "https://www.roblox.com/games/7576926901/the-hotdog-collection"},
-  {"id": 285, "abbr": "ToATC", "name": "Tower of Atrocious Truss Catastrophe", "diff": 1097, "places": [["JToH", "The Eternal Abyss"], ["CTT", "Domain 1"]]},
+  {"id": 285, "abbr": "ToATC", "name": "Tower of Atrocious Truss Catastrophe", "diff": 1097, "places": [["CTT", "Domain 1"]]},
   {"id": 286, "abbr": "ToPA", "name": "Tower of Perplexed Ascent", "diff": 1098, "places": [["Place", ""]], "game": "https://www.roblox.com/games/14477908828/Tower-of-Perplexed-Ascent-Fixed"},
   {"id": 287, "abbr": "SoWTT", "name": "Steeple of World's Tightest Timer", "diff": 1108, "places": [["Place", ""]], "game": "https://www.roblox.com/games/17549288909/steeple-of-the-worlds-tightest-timer"},
   {"id": 288, "abbr": "ToLLL", "name": "Tower of Long Lasting Leukophobia", "diff": 1105, "places": [["Place", ""]], "game": "https://www.roblox.com/games/7275802168/Tower-of-Long-Lasting-Leukophobia-V1"},
