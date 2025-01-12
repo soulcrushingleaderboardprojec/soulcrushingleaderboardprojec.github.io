@@ -37,7 +37,7 @@ all_towers = [
   {"id": 36, "abbr": "ToWWW", "name": "Tower of Wildly Wacky Wonders", "diff": 1081, "places": [["JToH", "Zone 9"]]},
   {"id": 37, "abbr": "ToI", "name": "Tower of Inception", "diff": 1091, "places": [["JToH", "Ring 4"]]},
   {"id": 38, "abbr": "ToAM", "name": "Tower of Augmented Misery", "diff": 1100, "places": [["Place", ""]], "game": "https://www.roblox.com/games/6891658171/Tower-of-Augmented-Misery-v2-5"},
-  {"id": 39, "abbr": "ToGF", "name": "Tower of Generation Failure", "diff": 1118, "places": [["Place", ""]], "https://www.roblox.com/games/4208479192/Tower-of-Generation-Failure-Mobile-Support"},
+  {"id": 39, "abbr": "ToGF", "name": "Tower of Generation Failure", "diff": 1118, "places": [["Place", ""]], "game": "https://www.roblox.com/games/4208479192/Tower-of-Generation-Failure-Mobile-Support"},
   {"id": 40, "abbr": "ToEMP", "name": "Tower of Empty Meaningless Patterns", "diff": 1133, "places": [["JToH", "Zone 9"]]},
   {"id": 41, "abbr": "ToDIE", "name": "Tower of Descent Into Exile", "diff": 1142, "places": [["JToH", "Zone 8"], ["AToS", "Ring 8"]]},
   {"id": 42, "abbr": "ToCR", "name": "Tower of Champion's Road", "diff": 1171, "places": [["JToH", "Ring 9"]]},
