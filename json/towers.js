@@ -1,5 +1,5 @@
 all_towers = [
-  {"id": 1, "abbr": "ToDT", "name": "Tower of Double Trouble", "diff": 800, "places": [["JToH", "Zone 2"]]},
+  {"id": 1, "abbr": "ToDT", "name": "Tower of Double Trouble", "diff": 800, "places": [["Place", ""]], "game": "https://www.roblox.com/games/2809269540/Tower-of-Double-Trouble"},
   {"id": 2, "abbr": "ToDC", "name": "Tower of Difficulty Chart", "diff": 809, "places": [["JToH", "Ring 2"]]},
   {"id": 3, "abbr": "TT", "name": "Thanos Tower", "diff": 813, "places": [["JToH", "Ring 1"]]},
   {"id": 4, "abbr": "ToHA", "name": "Tower of High Adrenaline", "diff": 816, "places": [["JToH", "Ring 9"]]},
