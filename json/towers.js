@@ -254,7 +254,7 @@ all_towers = [
   {"id": 253, "abbr": "ToAA", "name": "Tower of Architectural Agony", "diff": 1029, "places": [["Place", ""]], "game": "https://www.roblox.com/games/13419081799/ToAA-ToAL"},
   {"id": 254, "abbr": "ToSaPP", "name": "Tower of Specific and Precise Positioning", "diff": 1015, "places": [["Place", ""]], "game": "https://www.roblox.com/games/11935897006/tower-of-specific-and-precise-positioning"},
   {"id": 255, "abbr": "ToMEN", "name": "Tower of Melodramatic Esoteric Nebulosity", "diff": 1031, "places": [["Place", ""]], "game": "https://www.roblox.com/games/12951065800/ToMEN"},
-  {"id": 256, "abbr": "ToQQ", "name": "Tower of Quantum Quadrivium", "diff": 1033, "places": [["JToH", "The Eternal Abyss"]]},
+  {"id": 256, "abbr": "ToQQ", "name": "Tower of Quantum Quadrivium", "diff": 1033, "places": [["Place", ""]], "game": "https://www.roblox.com/games/11645001584/Tower-of-Quantum-Quadrivium"},
   {"id": 257, "abbr": "ToIH", "name": "Tower of Itetsuku Hoshi", "diff": 1012, "places": [["Place", ""]], "game": "https://www.roblox.com/games/5947459409/toih"},
   {"id": 258, "abbr": "ToAG", "name": "Tower of Atomical Geometry", "diff": 1045, "places": [["Place", ""]], "game": "https://www.roblox.com/games/8881431098/Tower-of-Atomical-Geometry"},
   {"id": 259, "abbr": "ToTMS", "name": "Tower of The Mewing Sigma", "diff": 1046, "places": [["Place", ""]], "game": "https://www.roblox.com/games/16709893629/Tower-of-the-Mewing-Sigma"},
