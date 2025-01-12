@@ -174,7 +174,7 @@ all_towers = [
   {"id": 173, "abbr": "ToEA", "name": "Tower of Excruciating Anguish", "diff": 1029, "places": [["Place, ""]], "game": "https://www.roblox.com/games/9294087951/Tower-of-Ease-to-Abyss"},
   {"id": 174, "abbr": "ToHN", "name": "Tower of Hellish Nightmares", "diff": 1062, "places": [["Place", ""]], "game": "https://www.roblox.com/games/11299189175/tower-of-HELLISH-NIGHTMARES"},
   {"id": 175, "abbr": "ToUP", "name": "Tower of Unrelenting Precipice", "diff": 1087, "places": [["Place", ""]], "game": "https://www.roblox.com/games/8214360994/Tower-of-Unrelenting-Precipice"},
-  {"id": 176, "abbr": "ToQ", "name": "Tower of Quadrilaterals", "diff": 1096, "places": [["Place", ""]], "game": "https://www.roblox.com/games/5995470640/Tower-of-Quadrilaterals-v2"},
+  {"id": 176, "abbr": "ToQ", "name": "Tower of Quadrilaterals", "diff": 1096, "places": [["JToH", "The Eternal Abyss"]]},
   {"id": 177, "abbr": "ToOE", "name": "Tower of Otherworldly Expertise", "diff": 1108, "places": [["Place", ""]], "game": "https://www.roblox.com/games/10287166926/Tower-of-Otherworldly-Expertise-UPDATED"},
   {"id": 178, "abbr": "ToTO", "name": "Tower of Tortuous Oblivion", "diff": 1139, "places": [["Place", ""]], "game": "https://www.roblox.com/games/7037462819/Tortuous-Oblivion"},
   {"id": 179, "abbr": "ToC", "name": "Tower of Centchade", "diff": 1148, "places": [["Place", ""]], "game": "https://www.roblox.com/games/4850065272/Tower-of-Centchade"},
