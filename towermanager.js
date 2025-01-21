@@ -253,12 +253,12 @@ function format_comps(c) {
   return f;
 }
 function format_ratio(a, b) {
-  return a + "/" + b + " (" + Math.floor((a / b) * 100) + "%)";
+  return a + "/" + b + " (" + Math.floor((a / b) * 100) + "," + "0".repeat(2 - Math.floor(((a / b) * 10000) % 100).toString().length) + Math.floor((a / b) * 10000) % 100 + "%)";
 }
 function open_player(name) {
   var player = player_from_name(name);
   var extra = "";
-  var completion_link = "soulcrushingleaderboardprojec.github.io?u=" + name;
+  var completion_link = "soulcrushingleaderboardproject.github.io?u=" + name;
   extra += "<p id='big'><b>" + name + "</b></p>";
   extra += "<br>Total EXP: " + player["exp"];
   extra += "<br>Level: " + format_level(player["exp"]);
