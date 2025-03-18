@@ -153,6 +153,6 @@ var all_completions = [
   {"name":"hltlgergamer","completions":[1,3,4,6,8,65,120]},
   {"name":"kingnoahrulesall","completions":[1,2,3,8,10,17,20,171]},
   {"name":"ItsLordGrisWorld","completions":[1,2,7,8,10,14,25,32,112,113,114,151]},
-  {"name":"Raverst610","completions":[56]},
+  {"name":"Raverst610","completions":[56,65]},
   ]
 
