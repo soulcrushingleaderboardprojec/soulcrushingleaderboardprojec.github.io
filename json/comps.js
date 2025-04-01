@@ -173,5 +173,5 @@ all_completions = [
 	{"name":"legoman14141","completions":[14,123]},
 	{"name":"Trierisch","completions":[3]},
 	{"name":"ThomasDejin","completions":[2,3,4,6,7,8,9,10,11,12,14,15,18,20,21,23,26,27,28,32,112,118,343,350]},
-	{"name":"Raverst610","completions":[53,56,65,596]},
+	{"name":"Raverst610","completions":[56,65,596]},
 ]
