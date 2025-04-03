@@ -176,4 +176,5 @@ all_completions = [
 	{"name":"Asdfwe135","completions":[1,2,3,6,8,18,20,23,36]},
 	{"name":"Ask_Reeves","completions":[1,2,3,4,5,6,8,9,10,16,18,20,23,27,28,29,31,35,39,41]},
 	{"name":"Ram0rx","completions":[1]},
+	{"name":"DavidSTDM","completions":[7,65,68]},
 ]
