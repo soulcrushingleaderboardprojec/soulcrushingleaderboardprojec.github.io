@@ -2,13 +2,25 @@ const credits = {
     "Owner": ["thej10n"],
     "Co-Owner": ["Z_Exzer"],
     "Developers": ["TheHaloDeveloper"],
-    "Managers": ["XChocolateMLGX", "vt_et", "Spitfire_YT5", "jumper101110", "ThePhantomDevil666", "jarofjam_14", "DJdestroyer916539", "38867a7468"],
+    "Managers": ["XChocolateMLGX", "vt_et", "Spitfire_YT5", "jumper101110", "ThePhantomDevil666", "jarofjam_14", "DJdestroyer916539"],
     "Trial Staff": ["..."],
     "Former Staff": ["arthraix"]
 }
 
 for (let [role, users] of Object.entries(credits)) {
     $("#credits").append(`<h3><div id="${role.toLowerCase().replaceAll(" ", "-")}">[${role}]</div>${users.join(", ")}</h3>`);
+}
+
+function getAbbr(x) {
+    x = x.replace("CumpleAnos", "Cumple Anos").replace(" Facility", "").replace("GBJ Edition", "G B J").replace(/\.([^\s])/g, ' $1').split(" (")[0];
+    let main = x.replace(":", " :").replaceAll('-', ' ').split(' ').map(word => {
+        if (!word) return '';
+        if (/^\d+$/.test(word)) return word[0];
+        let letter = word[0];
+        let digit = word.match(/\d/);
+        return (letter === letter.toLowerCase() ? letter : letter.toUpperCase()) + (digit ? digit[0] : '');
+    }).join('');
+    return main;
 }
 
 all_towers.sort((a, b) => b["id"] - a["id"]);
@@ -119,7 +131,7 @@ function search(s) {
     }
     for (let tower_search = 0; tower_search < all_towers.length; tower_search++) {
         let tower = all_towers[tower_search];
-        if (tower["abbr"].toLowerCase().includes(s.toLowerCase()) || tower["name"].toLowerCase().includes(s.toLowerCase())) {
+        if (getAbbr(tower["name"]).toLowerCase().includes(s.toLowerCase()) || tower["name"].toLowerCase().includes(s.toLowerCase())) {
             if (allowed_difficulties.includes(Math.floor(tower["diff"] / 100))
             && (place_filter == "" || is_tower_in_place(tower["places"], place_filter))) {
             new_towers.push(tower)
@@ -148,17 +160,18 @@ function get_victors(id) {
 }
 function open_extra(id) {
     var tower = tower_from_id(id);
-    var extra = "";
-    extra += "<p id='big'><b>(" + tower["abbr"] + ")</b> " + tower["name"] + "</p>";
-    extra += "<br>Difficulty: " + difficulty_to_range(tower["diff"]) + " " + difficulty_to_name(tower["diff"]) + " (" + format_difficulty(tower["diff"]) + ")";
-    extra += "<br>Location: " + format_location(tower, 0, 1);
-    if (tower["places"].length > 1) {
-        extra += "<br><i id='small'>Other Locations: " + format_location(tower, 1, tower["places"].length) + "</i>";
-    }
-    extra += "<br>Rank: #" + tower["rank"];
-    extra += "<br>EXP for completion: " + tower["exp"];
-    extra += "<br>Victors: " + get_victors(id);
-    extra += "<br><i id='small'>Tower ID: " + id + "</i>";
+    let other_locations = tower["places"].length > 1 ? `<br><i id="small">Other Locations: ${format_location(tower, 1, tower["places"].length)}</i>` : "";
+    
+    var extra = `
+        <p id="big"><b>(${getAbbr(tower["name"])})</b> ${tower["name"]}</p>
+        <br>Difficulty: ${difficulty_to_range(tower["diff"])} ${difficulty_to_name(tower["diff"])} (${format_difficulty(tower["diff"])})
+        <br>Location: ${format_location(tower, 0, 1)}
+        ${other_locations}
+        <br>Rank: #${tower["rank"]}
+        <br>EXP for completion: ${tower["exp"]}
+        <br>Victors: ${get_victors(id)}
+        <br><i id="small">Tower ID: ${id}</i>
+    `;
     $("#extra-data").html(extra);
 }
 
@@ -171,8 +184,8 @@ function list_towers() {
     if (is_valid_name && $("#color-checklist").prop("checked")) {
         for (let i = 0; i < towers.length; i++) {
             t_id = towers[i]["id"];
-            t_abbr = towers[i]["abbr"];
             t_name = towers[i]["name"];
+            t_abbr = getAbbr(t_name);
             t_diff = towers[i]["diff"];
             t_area = towers[i]["places"];
             t_rank = towers[i]["rank"];
@@ -195,8 +208,8 @@ function list_towers() {
     } else {
         for (let i = 0; i < towers.length; i++) {
             t_id = towers[i]["id"];
-            t_abbr = towers[i]["abbr"];
             t_name = towers[i]["name"];
+            t_abbr = getAbbr(t_name);
             t_diff = towers[i]["diff"];
             t_area = towers[i]["places"];
             t_rank = towers[i]["rank"];
@@ -313,19 +326,20 @@ function format_ratio(a, b) {
 
 function open_player(name) {
     var player = player_from_name(name);
-    var extra = "";
     var completion_link = "sclp.vercel.app?u=" + name;
-    extra += "<p id='big'><b>" + name + "</b></p>";
-    extra += "<br>Total EXP: " + player["exp"];
-    extra += "<br>Level: " + format_level(player["exp"]);
-    extra += "<br>Rank: #" + player["rank"];
-    extra += "<br><a href='https://" + completion_link + "'>" + completion_link + "</a>";
-    extra += "<br><br><b id='big'>Stats</b><br><br>";
-    extra += "<span class='difficulty-display'><b>TOTAL</b></span> " + format_ratio(player["completions"].length, all_towers.length);
+
+    var extra = `
+        <p id="big"><b>${name}</b></p>
+        <br>Total EXP: ${player["exp"]}
+        <br>Level: ${format_level(player["exp"])}
+        <br>Rank: #${player["rank"]}
+        <br><a href="https://${completion_link}">${completion_link}</a>
+        <br><br><b id='big'>Stats</b><br><br>
+        <span class='difficulty-display'><b>TOTAL</b></span> ${format_ratio(player["completions"].length, all_towers.length)}
+    `;
 
     for (let d = 8; d < 14; d++) {
-        extra += "<br><span id='" + difficulty_to_name(d * 100) + "' class='difficulty-display'>" + difficulty_to_name(d * 100) + "</span> " + 
-        format_ratio(get_towers_within_range(get_completed_data(player["completions"]), d * 100, (d * 100) + 99).length, get_towers_within_range(all_towers, d * 100, (d * 100) + 99).length);
+        extra += `<br><span id="${difficulty_to_name(d * 100)}" class="difficulty-display">${difficulty_to_name(d * 100)}</span> ${format_ratio(get_towers_within_range(get_completed_data(player["completions"]), d * 100, (d * 100) + 99).length, get_towers_within_range(all_towers, d * 100, (d * 100) + 99).length)}`;
     }
     
     extra += "<br><br><b id='big'>Completions</b><br><br>";
@@ -409,7 +423,7 @@ function open_page(page_name) {
     for (let [_, v] of Object.entries(page_maps)) {
         $(`#${v}-page`).hide();
     }
-    $(`#${page_maps[page_name]}-page`).css("display", "flex");
+    $(`#${page_maps[page_name]}-page`).css("display", "");
 }
 
 const url = window.location.search;
@@ -419,7 +433,7 @@ if (params.get("u")) {
     open_player(params.get("u"));
 }
 
-let old_url = "soulcrushingleaderboardproject.github.io";
+let old_url = "soulcrushingleaderboardprojec.github.io";
 if (window.location.hostname == old_url) {
-    window.location.href = window.location.href.replace(old_url, "sclp.vercel.app");
+    window.location.href = window.location.href.replace(old_url, "soulcrushingleaderboardprojec.vercel.app");
 }
