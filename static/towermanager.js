@@ -326,7 +326,7 @@ function format_ratio(a, b) {
 
 function open_player(name) {
     var player = player_from_name(name);
-    var completion_link = "sclp.vercel.app?u=" + name;
+    var completion_link = "soulcrushingleaderboardprojec.vercel.app?u=" + name;
 
     var extra = `
         <p id="big"><b>${name}</b></p>
