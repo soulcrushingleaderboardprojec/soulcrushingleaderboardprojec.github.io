@@ -212,4 +212,5 @@ all_completions = [
 	{"name":"OnyxGD1","completions":[2,7]},
 	{"name":"hotsauceplays","completions":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,35,37,39]},
 	{"name":"38867a7468","completions":[348,351,567,596,652,664]},
+	{"name":"Raverst610","completions":[348]},
 ]
