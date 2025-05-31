@@ -1,0 +1,3 @@
+.env
+service.json
+.DS_Store
