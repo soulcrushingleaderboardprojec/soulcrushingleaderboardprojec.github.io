@@ -20,7 +20,7 @@ def format_data(x):
     return res
 
 API_KEY = os.getenv("GOOGLE_SHEETS_API_KEY")
-SHEET_ID = "1ffz-IFNSEDQay9jkR5JbOj7NPEljBX4jc2oIYzypRLc"
+SHEET_ID = "1TVUSwKPG0-RDdKsO3w78BFuTsfKR2j6hxq2v3f17zh0"
 RANGE = "comps!A:B"
 
 url = f"https://sheets.googleapis.com/v4/spreadsheets/{SHEET_ID}/values/{RANGE}?key={API_KEY}"
