@@ -1,7 +1,7 @@
-from flask import Flask, render_template, make_response, send_from_directory
+from flask import Flask, render_template, make_response, send_from_directory, jsonify
 import os
-import requests
 from dotenv import load_dotenv
+import utils.funcs as funcs
 load_dotenv()
 
 app = Flask(__name__)
@@ -13,26 +13,38 @@ def add_no_cache_headers(response):
     response.headers['Expires'] = '0'
     return response
 
-def format_data(x):
-    res = []
-    for row in x:
-        res.append({"name": row[0], "completions": list(map(int, row[1].split(",")))})
-    return res
+all_completions = funcs.get_data("comps!A:C")
+all_towers = funcs.get_data("towers!A:E")
+all_games = funcs.get_data("games!A:C")
 
-API_KEY = os.getenv("GOOGLE_SHEETS_API_KEY")
-SHEET_ID = "1TVUSwKPG0-RDdKsO3w78BFuTsfKR2j6hxq2v3f17zh0"
-RANGE = "comps!A:B"
-
-url = f"https://sheets.googleapis.com/v4/spreadsheets/{SHEET_ID}/values/{RANGE}?key={API_KEY}"
-response = requests.get(url)
-values = response.json().get("values", [])
-
-data = [row for row in values if any(row)]
-data = format_data(data)
+for tower in all_towers:
+    tower["id"] = int(tower["id"])
+    tower["difficulty"] = int(tower["difficulty"])
+    
+    raw = tower.get("places", "").strip()
+    if not raw or raw == ";":
+        tower["places"] = []
+    else:
+        parts = [part.strip() for part in raw.split(";") if part.strip()]
+        if not parts:
+            tower["places"] = []
+        else:
+            parsed = [p.split(",") for p in parts if p]
+            if parsed == [[""]]:
+                tower["places"] = []
+            else:
+                tower["places"] = parsed
+    
+    if tower["game"] == "":
+        tower["game"] = None
+        
+@app.route("/tower_data")
+def tower_data():
+    return jsonify(all_towers)
 
 @app.route("/")
 def home():
-    return render_template("index.html", data=data)
+    return render_template("index.html", all_completions=all_completions, all_towers=all_towers, all_games=all_games)
 
 @app.route("/static/<path:filename>")
 def static_files(filename):
