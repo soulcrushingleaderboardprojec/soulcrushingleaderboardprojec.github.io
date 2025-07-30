@@ -374,6 +374,7 @@ function open_page(page_num) {
   // 1 - Home
   // 2 - Towers
   // 3 - Leaderboard
+  // 4 - Games
   g("menu-page").style.display = "none";
   g("tower-lookup-page").style.display = "none";
   g("leaderboard-page").style.display = "none";
@@ -383,7 +384,8 @@ function open_page(page_num) {
     g("tower-lookup-page").style.display = "";
   } else if (page_num == 3) {
     g("leaderboard-page").style.display = "";
-  }
+  } else if (page_num == 4) {
+    g("leaderboard-page").style.display = "";
 }
 const url = window.location.search;
 const params = new URLSearchParams(url);
