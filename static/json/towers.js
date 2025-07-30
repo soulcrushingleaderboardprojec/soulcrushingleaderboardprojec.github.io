@@ -200,7 +200,7 @@ var all_towers = [
 {"id": 198, "name": "Citadel of High Sky Rise", "diff": 886, "places": [["NCoH", "Ring 1"]]},
 {"id": 199, "name": "Tower of The DiCaprio Story", "diff": 906, "places": [], "game": "https://www.roblox.com/games/13222620808"},
 {"id": 200, "name": "Tower of Hotel Exploration", "diff": 1034, "places": [], "game": "https://www.roblox.com/games/8714551508"},
-    {"id": 201, "name": "Citadel of Subway", "diff": 825, "places": [["NCoH", "Ring 3"]]},
+{"id": 201, "name": "Citadel of Subway", "diff": 825, "places": [["NCoH", "Ring 3"]]},
 {"id": 202, "name": "Citadel of Condescendingly Convulsive Climbing", "diff": 946, "places": [["NCoH", "Ring 3"]]},
 {"id": 203, "name": "Tower of Persistence", "diff": 804, "places": [["TWR$", "Ring 3"]], "game": "https://www.roblox.com/games/16305154582"},
 {"id": 204, "name": "Tower of Big Pain", "diff": 827, "places": [["TWR$", "Ring 2"]]},
@@ -244,5 +244,10 @@ var all_towers = [
 {"id": 242, "name": "Steeple of Nilly Bob", "diff": 1251, "places": [["TEA", "The Eternal Abyss"]]},
 {"id": 243, "name": "Tower of Spiritual Rise", "diff": 1272, "places": [["TEA", "The Eternal Abyss"]]},
 {"id": 244, "name": "Ikea Tower", "diff": 1294, "places": [["TEA", "Pit of Misery"]]},
-{"id": 245, "name": "World's Hardest Tower", "diff": 1007, "places": [], "game": "https://www.roblox.com/games/11561092817"}
+{"id": 245, "name": "World's Hardest Tower", "diff": 1007, "places": [], "game": "https://www.roblox.com/games/11561092817"},
+{"id": 246, "name": "Tower of Grogginess", "diff": 813, "places": [["TEA", "Pit of Misery"]]},
+{"id": 247, "name": "Tower of Flaming Luck", "diff": 855, "places": [["TEA", "Pit of Misery"]]},
+{"id": 248, "name": "Tower of Choking Dread", "diff": 875, "places": [["TEA", "Pit of Misery"]]},
+{"id": 249, "name": "Tower of Something Unholy", "diff": 902, "places": [["TEA", "Pit of Misery"]]},
+{"id": 250, "name": "Tower of Acrid Rain", "diff": 926, "places": [["TEA", "Pit of Misery"]]},
 ]
