@@ -554,5 +554,5 @@ all_towers = [
   {"id": 553, "abbr": "ToNCL", "name": "Tower of No Confidence Left", "diff": 957, "places": [["AHoSCT", "Spot 1"]]},
   {"id": 554, "abbr": "ToRHQ", "name": "Tower of Ruthless Hidden Quintessence", "diff": 986, "places": [["AHoSCT", "Spot 4"]]},
   {"id": 555, "abbr": "ToIM", "name": "Tower of Infuriating Misfortune", "diff": 1162, "places": [["RT", "Magmatic Lands"]]},  
-  {"id": 556, "abbr": "ToRI", "name": "Tower of Righteous Indignation", "diff": 1195, "places": [["Place", ""]], "game": "https://www.roblox.com/games/9345112933/Righteous-Indignation"}
+  {"id": 556, "abbr": "ToRI", "name": "Tower of Righteous Indignation", "diff": 1195, "places": [["Place", ""]], "game": "https://www.roblox.com/games/9345112933/Righteous-Indignation"},
 ]
