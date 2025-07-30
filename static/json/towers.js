@@ -299,7 +299,7 @@ var all_towers = [
 {"id": 297, "name": "Tower of The Ice Wall", "diff": 1213, "places": [["AHoSCT", "Spot 1B"]]},
 {"id": 298, "name": "Doomsday Tower", "diff": 1217, "places": [["TEA", "Timeless Manor"]], "game": "https://www.roblox.com/games/4361181088"},
 {"id": 299, "name": "Tower of The Bussin", "diff": 1212, "places": [], "game": "https://www.roblox.com/games/13805847493"},
-{"id": 300, "name": "Tower of Truss Anarchy", "diff": 1211, "places": [], "game": "https://www.roblox.com/games/10939670001"}
+{"id": 300, "name": "Tower of Truss Anarchy", "diff": 1211, "places": [], "game": "https://www.roblox.com/games/10939670001"},
 {"id": 301, "name": "Tower of Devious Purism", "diff": 1209, "places": [], "game": "https://www.roblox.com/games/15704325043"},
 {"id": 302, "name": "Tower of Hollow Obstacles", "diff": 1223, "places": [], "game": "https://www.roblox.com/games/7274150666"},
 {"id": 303, "name": "Tower of Timed Button Fury", "diff": 1203, "places": [], "game": "https://www.roblox.com/games/130294212060932"},
@@ -349,5 +349,5 @@ var all_towers = [
 {"id": 347, "name": "Tower of Incoherent Insanity", "diff": 823, "places": [["LToD", "Ring 2"]]},
 {"id": 348, "name": "Tower of Obbyist's League", "diff": 820, "places": [["AHoSCT", "Spot 1"]]},
 {"id": 349, "name": "Steeple of Winds Away", "diff": 866, "places": [["AHoSCT", "Spot 1"]]},
-{"id": 350, "name": "Tower of Movin' Right Along", "diff": 868, "places": [["DEToH", "District 1"]], "game": "https://www.roblox.com/games/93937373882306"},
-]
+{"id": 350, "name": "Tower of Movin' Right Along", "diff": 868, "places": [["DEToH", "District 1"]], "game": "https://www.roblox.com/games/93937373882306"}
+
