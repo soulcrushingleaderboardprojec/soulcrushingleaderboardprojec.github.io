@@ -1,13 +1,52 @@
-all_towers.sort((a, b) => b["id"] - a["id"]);
-all_towers.sort((a, b) => b["diff"] - a["diff"]);
+all_towers.sort((a, b) => a["diff"] - b["diff"]);
 for (t = 0; t < all_towers.length; t++) {
-  all_towers[t]["rank"] = t + 1;
+  all_towers[t]["rank"] = all_towers.length - t;
   all_towers[t]["exp"] = Math.floor((3 ** ((all_towers[t]["diff"] - 800) / 100)) * 100);
-  if (all_towers[t]["game"] != null) {
-    all_towers[t]["places"].push(["Place", ""])
-  }
 }
 var towers = all_towers;
+var all_completions = [
+  {"name": "thej10n", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 35, 45, 56, 57, 59, 65, 66, 67, 68, 70, 72, 74, 76, 77, 78, 80, 82, 83, 84, 86, 87, 111, 112, 113, 114, 115, 116, 117, 120, 121, 124, 125, 127, 128, 129, 138, 143, 148, 155, 158, 167, 168, 170, 187, 189, 191, 196, 197, 199, 200, 206, 214, 222, 226]},
+  {"name": "robloxfan5964", "completions": [9]},
+  {"name": "TheHaloDeveloper", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 16, 18, 20, 24, 28]},
+  {"name": "LoveliestJacob", "completions": [1, 2, 3, 8]},
+  {"name": "Mlg_MemeGod", "completions": [1, 2, 3, 7, 8, 10, 15, 22, 63, 158]},
+  {"name": "smashultimate68", "completions": [1, 13]},
+  {"name": "FelinesGoneFaster", "completions": [1, 6, 9, 10, 17, 18, 25, 28, 32, 57, 65, 70, 114]},
+  {"name": "markoj_v", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 37, 38, 39, 41, 42, 43, 44, 45, 47, 49, 50, 51, 56, 57, 82, 138, 141]},
+  {"name": "wk65_mobile", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14, 15, 17, 18, 20, 23, 26, 28, 30, 33, 58, 59, 65, 66, 67, 68, 70, 74, 77, 111, 112, 113, 114, 117, 118, 120, 127, 143, 191]},
+  {"name": "1X1x1sx1x", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 38, 61, 65, 81, 83, 104, 107, 111, 112, 114, 115, 119, 124, 127, 134, 156, 158, 160]},
+  {"name": "PlinTret", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 33, 35, 37, 38, 42, 45, 65, 68, 108, 111, 163]},
+  {"name": "VepicxVT", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 56, 57, 58, 60, 61]},
+  {"name": "MQLSuper", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 11, 13, 16, 17, 18, 23, 26, 27, 29, 30, 32, 39, 56, 65, 70, 112, 138, 156, 158, 161, 163]},
+  {"name": "simonixen", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 20, 22, 23, 26, 27, 28, 29, 30, 31, 33, 36, 38, 39, 42, 59, 65, 83, 113, 115, 119, 120, 205, 214, 220, 226, 233]},
+  {"name": "i_tkk", "completions": [1, 2, 3, 4, 6, 8, 9, 10, 13, 20, 23, 28, 29, 32, 33, 35, 36, 39, 214]},
+  {"name": "Zvxiffy", "completions": [1, 2, 8, 16, 20, 23]},
+  {"name": "ZeKilla440", "completions": [1, 2, 8, 20]},
+  {"name": "Jdbowles08", "completions": [1, 2, 3, 4, 5, 7, 8, 9, 10, 12, 20, 23, 24, 25, 26, 33, 38, 82, 114]},
+  {"name": "dumbpersonalt1919", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 17, 20, 23, 25, 26, 28, 30, 33, 65, 112, 113, 114, 115, 116, 122]},
+  {"name": "CoasterBoy2021", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 24, 27, 28, 29, 30, 65, 67, 70, 112, 115, 120, 123, 125]},
+  {"name": "Cyulura", "completions": [1, 2, 4, 6, 8, 9, 10, 13, 14, 16, 17, 18, 19, 23, 24, 25, 28, 29, 30, 33, 42]},
+  {"name": "x0Maxi", "completions": [1, 2, 3, 11, 13, 18, 29]},
+  {"name": "ThePhantomDevil666", "completions": [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 23, 28, 156]},
+  {"name": "XChocolateMLGX", "completions": [6]},
+  {"name": "metalfuzeon", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 25, 26, 27, 28, 29, 31, 32, 33, 35, 36, 39]},
+  {"name": "1Hyuns", "completions": [1, 2, 3, 20, 23, 28]},
+  {"name": "Maxis_s", "completions": [1, 2, 3, 8, 9, 10, 20, 23, 26, 28, 30, 31, 39, 234]},
+  {"name": "Lesycling", "completions": [1, 3, 6, 8, 9, 10, 11, 14, 23, 26, 27, 33, 65, 112, 113, 114, 118]},
+  {"name": "ddoodle7", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 26, 27, 29, 30, 31, 33, 34, 42, 172]},
+  {"name": "4_qu", "completions": [1, 2, 3, 5, 8, 10, 16, 20, 23, 26, 30, 31, 37, 92]},
+  {"name": "beast1132s", "completions": [6, 9, 114]},
+  {"name": "vt_et", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 57, 58, 59, 65, 66, 67, 68, 69, 70, 72, 74, 75, 76, 77, 79, 80, 81, 82, 83, 84, 104, 105, 106, 108, 109, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 126, 127, 128, 129, 130, 131, 133, 134, 135, 136, 137, 138, 140, 142, 143, 144, 145, 146, 147, 148, 151, 156, 161, 162, 163, 164, 167, 168, 169, 170, 186, 187, 188, 189, 191, 192, 193, 194, 195, 199, 203, 204, 205, 206, 207, 208, 214, 215, 218, 219, 220, 221, 226]},
+  {"name": "alihamzaeid1", "completions": [2, 7, 9, 13, 33, 118, 125]},
+  {"name": "j1any1", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13, 16, 18, 23, 31, 60]},
+  {"name": "enaerios", "completions": [1, 3, 9, 10, 18, 27, 33]},
+  {"name": "Z_Exzer", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 47, 49, 65, 67, 68, 76, 77, 82, 91, 111, 112, 113, 114, 116, 125, 138, 178, 181, 184, 214, 236, 240]},
+  {"name": "UnfunnyGaming99", "completions": [65, 124]},
+  {"name": "Face_Palm22", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 33, 38, 45, 47]},
+  {"name": "Spitfire_YT5", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 18, 20, 22, 23, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 38, 39, 56, 59, 60, 62, 65, 68, 70, 77, 112, 114, 118, 120, 127, 138, 151, 218]},
+  {"name": "jarofjam_14", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 45, 57, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 70, 72, 74, 75, 77, 82, 83, 175, 218, 219, 220, 226]},
+  {"name": "H3l3n4_r3algirl", "completions": [1, 2]},
+];
 for (player = 0; player < all_completions.length; player++) {
   all_completions[player]["exp"] = get_total_exp(all_completions[player]["name"]);
 }
@@ -16,22 +55,9 @@ for (player = 0; player < all_completions.length; player++) {
   all_completions[player]["rank"] = player + 1;
 }
 var completions = all_completions;
-var games = all_games;
 function g(element_id) {
   return document.getElementById(element_id);
 }
-g("sclp-tower-search").addEventListener("keypress", function(event) {
-  if (event.key == "Enter") {
-    towers = search(g("sclp-tower-search").value);
-    list_towers();
-  }
-})
-g("sclp-player-search").addEventListener("keypress", function(event) {
-  if (event.key == "Enter") {
-    completions = psearch(g("sclp-player-search").value);
-    list_players();
-  }
-})
 function difficulty_to_name(d) {
   if (d < 900) {return "Insane";}
   if (d < 1000) {return "Extreme";}
@@ -57,53 +83,26 @@ function format_difficulty(d) {
   s = d.toString();
   return s.slice(0, s.length - 2) + "," + s.slice(s.length - 2, s.length + 1);
 }
-function format_location(tower, start, end) {
-  places = tower["places"].slice(start, end)
-  game = tower["game"]
-  formatted = "";
-  for (i = 0; i < places.length; i++) {
-    loc = places[i];
-    if (loc[0] == "Place") {
-      formatted += "<a href='" + game + "' target='_blank'>" + loc[0] + "</a>";
-    } else {
-      formatted += "<a href='" + game_from_abbr(loc[0])["link"] + "' target='_blank'>" + loc[0]
+function format_location(a) {
+  s = "";
+  for (j = 0; j < a.length; j++) {
+    l = a[j];
+    s += l[0];
+    if (l[1] != "") {
+      s += ", " + l[1];
     }
-    if (loc[1] != "") {
-      formatted += ", " + loc[1] + "</a>";
-    } else {
-      formatted += "</a>"
-    }
-    if (i != places.length - 1) {
-      formatted += " / ";
+    if (j != a.length - 1) {
+      s += " / ";
     }
   }
-  return formatted;
-}
-function is_tower_in_place(places, place) {
-  for (i = 0; i < places.length; i++) {
-    game = places[i][0]
-    if (game == place) {
-      return true;
-    }
-  }
-  return false;
+  return s;
 }
 function search(s) {
   new_towers = [];
-  allowed_difficulties = [];
-  place_filter = g("game-select").value;
-  for (i = 8; i < 14; i++) {
-    if (g("diff-" + i).checked) {
-      allowed_difficulties.push(i);
-    }
-  }
   for (tower_search = 0; tower_search < all_towers.length; tower_search++) {
     tower = all_towers[tower_search];
     if (tower["abbr"].toLowerCase().includes(s.toLowerCase()) || tower["name"].toLowerCase().includes(s.toLowerCase())) {
-      if (allowed_difficulties.includes(Math.floor(tower["diff"] / 100))
-        && (place_filter == "" || is_tower_in_place(tower["places"], place_filter))) {
-        new_towers.push(tower)
-      }
+      new_towers.push(tower)
     }
   }
   return new_towers;
@@ -128,11 +127,8 @@ function open_extra(id) {
   var tower = tower_from_id(id);
   var extra = "";
   extra += "<p id='big'><b>(" + tower["abbr"] + ")</b> " + tower["name"] + "</p>";
-  extra += "<br>Difficulty: " + difficulty_to_range(tower["diff"]) + " " + difficulty_to_name(tower["diff"]) + " (" + format_difficulty(tower["diff"]) + ")";
-  extra += "<br>Location: " + format_location(tower, 0, 1);
-  if (tower["places"].length > 1) {
-    extra += "<br><i id='small'>Other Locations: " + format_location(tower, 1, tower["places"].length) + "</i>";
-  }
+  extra += "<b id=\"" + difficulty_to_name(tower["diff"]) + "\">[*] </b> Difficulty: " + difficulty_to_range(tower["diff"]) + " " + difficulty_to_name(tower["diff"]) + " (" + format_difficulty(tower["diff"]) + ")";
+  extra += "<br>Location: " + format_location(tower["places"]);
   extra += "<br>Rank: #" + tower["rank"];
   extra += "<br>EXP for completion: " + tower["exp"];
   extra += "<br>Victors: " + get_victors(id);
@@ -140,64 +136,22 @@ function open_extra(id) {
   g("extra-data").innerHTML = extra;
 }
 function list_towers() {
-  var t = "<br>";
-  var is_valid_name = player_from_name(g("checklist-player").value) != false;
-  if (is_valid_name) {
-    var comp_data = player_from_name(g("checklist-player").value)["completions"];
-  }
-  if (is_valid_name && g("color-checklist").checked) {
-    for (i = 0; i < towers.length; i++) {
-      t_id = towers[i]["id"];
-      t_abbr = towers[i]["abbr"];
-      t_name = towers[i]["name"];
-      t_diff = towers[i]["diff"];
-      t_area = towers[i]["places"];
-      t_rank = towers[i]["rank"];
-      t_exp = towers[i]["exp"];
-      t += "<div id='item'>"
-      t += "<span id='" + difficulty_to_name(t_diff) + "'>#" + t_rank + "</span>"
-      if (comp_data.includes(t_id)) {
-        t += "<button id='tower-button-crossed' onclick='open_extra(" + t_id + ")'><b><s>" + t_name + "</s></b></button>"
-      } else {
-        t += "<button id='tower-button' onclick='open_extra(" + t_id + ")'><b>" + t_name + "</b></button>"
-      }
-      if (g("extra-tower-info").checked) {
-        t += "<i id='small'><br><span></span>"
-        t += "(" + format_difficulty(t_diff) + " - " + t_area[0][0] + " - " + t_exp + " EXP)</i>"
-      }
-      t += "</div>"
-    }
-  } else {
-    for (i = 0; i < towers.length; i++) {
-      t_id = towers[i]["id"];
-      t_abbr = towers[i]["abbr"];
-      t_name = towers[i]["name"];
-      t_diff = towers[i]["diff"];
-      t_area = towers[i]["places"];
-      t_rank = towers[i]["rank"];
-      t_exp = towers[i]["exp"];
-  
-      //if (is_valid_name && g("color-checklist").checked && comp_data.includes(t_id)) {
-      //  t += "<div id='itemCompleted'>";
-      //} else {
-      //  t += "<div id='item" + difficulty_to_name(t_diff) + "'>";
-      //}
-  
-      t += "<div id='item'>"
-      t += "<span id='" + difficulty_to_name(t_diff) + "'>#" + t_rank + "</span>"
-      t += "<button id='tower-button' onclick='open_extra(" + t_id + ")'><b>" + t_name + "</b></button>"
-      if (g("extra-tower-info").checked) {
-        t += "<i id='small'><br><span></span>"
-        t += "(" + format_difficulty(t_diff) + " - " + t_area[0][0] + " - " + t_exp + " EXP)</i>"
-      }
-      t += "</div>"
-  
-      //t += "<button id='info-button' onclick='open_extra(" + t_id + ")'>+</button>"
-      //t += "<b> #" + t_rank + " </b>" + t_name;
-      //t += "<i id='small'> (";
-      //t += format_difficulty(t_diff) + " - " + format_location(t_area) + " - #" + t_rank;
-      //t += ")</i></p>";
-    }
+  var t = "";
+  for (i = 0; i < towers.length; i++) {
+    t_id = towers[i]["id"];
+    t_abbr = towers[i]["abbr"];
+    t_name = towers[i]["name"];
+    t_diff = towers[i]["diff"];
+    t_area = towers[i]["places"];
+    t_rank = towers[i]["rank"];
+
+    t += "<p id='item'>";
+    t += "<b id=\"" + difficulty_to_name(t_diff) + "\">[*] </b>"
+    t += "<b>(" + t_abbr + ") </b>" + t_name;
+    t += " <button id='info-button' onclick='open_extra(" + t_id + ")'>+</button>"
+    t += "<br><i id='small'>";
+    t += format_difficulty(t_diff) + " - " + format_location(t_area) + " - #" + t_rank;
+    t += "</i></p>";
   }
   g("searchmenu").innerHTML = t;
 }
@@ -214,29 +168,20 @@ function player_from_name(name) {
       return all_completions[i];
     }
   }
-  return false;
 }
-function format_level(exp, level_only) {
+function format_level(exp) {
   current_level = 0;
   last_exp = 150;
   total = 0;
   if (exp < 175) {
-    if (level_only == true) {
-      return "0";
-    } else {
-      return "0 (" + exp + "/175)";
-    }
+    return "0 (" + exp + "/175)";
   }
   while (total <= exp) {
     current_level += 1;
     last_exp = 150 + (25 * (current_level ** 2));
     total += last_exp;
   }
-  if (level_only == true) {
-    return current_level - 1
-  } else {
-    return (current_level - 1) + " (" + (exp - (total - last_exp)) + "/" + (150 + (25 * (current_level ** 2))) + ")";
-  }
+  return (current_level - 1) + " (" + (exp - (total - last_exp)) + "/" + (150 + (25 * (current_level ** 2))) + ")";
 }
 function get_total_exp(player) {
   c = player_from_name(player)["completions"];
@@ -256,140 +201,47 @@ function psearch(s) {
   }
   return new_players;
 }
-function get_towers_within_range(towers, minimum, maximum) {
-  towers_within_range = [];
-  for (i = 0; i < towers.length; i++) {
-    if (minimum <= towers[i]["diff"] && towers[i]["diff"] <= maximum) {
-      towers_within_range.push(towers[i]);
-    }
-  }
-  return towers_within_range;
-}
-function get_completed_data(c) {
-  c_data = [];
-  for (comp = 0; comp < c.length; comp++) {
-    c_data.push(tower_from_id(c[comp]))
-  }
-  return c_data;
-}
 function format_comps(c) {
   f = "";
-  rank = 1;
-  padding = c.length.toString().length;
-  for (t = 0; t < all_towers.length; t++) {
+  for (t = all_towers.length - 1; t >= 0; t--) {
     if (c.includes(all_towers[t]["id"])) {
       tower = all_towers[t];
-
-
-      f += "<span id='" + difficulty_to_name(tower["diff"]) + "'>#" + tower["rank"] + "</span>"
-      f += "<button id='tower-button' onclick='open_page(2);open_extra(" + tower["id"] + ")'><b>" + tower["name"] + "</b></button>"
-      f += "<br>"
-
-
-      //f += "<b id=\"" + difficulty_to_name(tower["diff"]) + "\">[#" + "0".repeat(padding - rank.toString().length) + rank + "] </b>"
-      //f += "<b>(" + tower["abbr"] + ") </b>" + tower["name"];
-      //f += " <i id='small'>";
-      //f += format_difficulty(tower["diff"]) + " - #" + tower["rank"];
-      //f += "</i><br>";
-      rank++;
+      f += "<b id=\"" + difficulty_to_name(tower["diff"]) + "\">[*] </b>"
+      f += "<b>(" + tower["abbr"] + ") </b>" + tower["name"];
+      f += " <i id='small'>";
+      f += format_difficulty(tower["diff"]) + " - #" + tower["rank"];
+      f += "</i><br>";
     }
   }
   return f;
 }
-function format_ratio(a, b) {
-  return "<span class='difficulty-display'>" + a + "/" + b + "</span><span class='difficulty-display'>" + Math.floor((a / b) * 100) + "," + "0".repeat(2 - Math.floor(((a / b) * 10000) % 100).toString().length) + Math.floor((a / b) * 10000) % 100 + "%</span>";
-}
 function open_player(name) {
   var player = player_from_name(name);
   var extra = "";
-  var completion_link = "soulcrushingleaderboardproject.github.io?u=" + name;
   extra += "<p id='big'><b>" + name + "</b></p>";
   extra += "<br>Total EXP: " + player["exp"];
   extra += "<br>Level: " + format_level(player["exp"]);
   extra += "<br>Rank: #" + player["rank"];
-  extra += "<br><a href='https://" + completion_link + "'>" + completion_link + "</a>";
-  extra += "<br><br><b id='big'>Stats</b><br><br>";
-  extra += "<span class='difficulty-display'><b>TOTAL</b></span> " + format_ratio(player["completions"].length, all_towers.length);
-  for (d = 8; d < 14; d++) {
-    extra += "<br><span id='" + difficulty_to_name(d * 100) + "' class='difficulty-display'>" + difficulty_to_name(d * 100) + "</span> " + 
-    format_ratio(get_towers_within_range(get_completed_data(player["completions"]), d * 100, (d * 100) + 99).length, get_towers_within_range(all_towers, d * 100, (d * 100) + 99).length);
-  }
-  extra += "<br><br><b id='big'>Completions</b><br><br>";
+  extra += "<br><br><b>Completions:</b><br>";
   extra += format_comps(player["completions"]);
   g("player-data").innerHTML = extra;
 }
 function list_players() {
-  var p = "<br>";
+  var p = "";
   for (i = 0; i < completions.length; i++) {
     p_name = completions[i]["name"];
     p_comps = completions[i]["completions"];
     p_exp = completions[i]["exp"];
     p_rank = completions[i]["rank"];
 
-    p += "<div id='item'>";
-    p += "<span>#" + p_rank + "</span>"
-    p += "<button id='player-button' onclick='open_player(\"" + p_name + "\")'><b>" + p_name + "</b></button>"
-    p += " Level " + format_level(p_exp, true)
-    if (g("extra-player-info").checked) {
-      p += "<i id='small'><br><span></span>"
-      p += "(" + p_comps.length + " SCs - " + p_exp + " Total EXP)</i>"
-    }
-    p += "</div>"
-
-    //p += "<b>[" + (i + 1) + "] </b>"
-    //p += p_name;
-    //p += " <button id='info-button' onclick='open_player(\"" + p_name + "\")'>+</button>"
-    //p += "<br><i id='small'>";
-    //p += p_comps.length + " Completions - " + p_exp + " EXP - Level " + format_level(p_exp) + " - #" + p_rank;
-    //p += "</i></div>";
+    p += "<p id='item'>";
+    p += "<b>[" + (i + 1) + "] </b>"
+    p += p_name;
+    p += " <button id='info-button' onclick='open_player(\"" + p_name + "\")'>+</button>"
+    p += "<br><i id='small'>";
+    p += p_comps.length + " Completions - " + p_exp + " EXP - Level " + format_level(p_exp) + " - #" + p_rank;
+    p += "</i></p>";
   }
   g("leaderboard").innerHTML = p;
 }
 list_players();
-
-
-
-// game links
-function game_from_abbr(abbr) {
-  for (gm = 0; gm < games.length; gm++) {
-    if (abbr == games[gm]["abbr"]) {
-      return games[gm];
-    }
-  }
-  return false;
-}
-
-// idfk what im doing anymore
-gm = "<option value=''>All</option><option value='Place'>Place</option>";
-for (i = 0; i < all_games.length; i++) {
-  game = all_games[i];
-  gm += "<option value='" + game["abbr"] + "'>" + game["abbr"] + "</option>";
-}
-g("game-select").innerHTML = gm;
-
-
-g("tower-lookup-page").style.display = "none";
-g("leaderboard-page").style.display = "none";
-function open_page(page_num) {
-  // 1 - Home
-  // 2 - Towers
-  // 3 - Leaderboard
-  // 4 - Games
-  g("menu-page").style.display = "none";
-  g("tower-lookup-page").style.display = "none";
-  g("leaderboard-page").style.display = "none";
-  if (page_num == 1) {
-    g("menu-page").style.display = "";
-  } else if (page_num == 2) {
-    g("tower-lookup-page").style.display = "";
-  } else if (page_num == 3) {
-    g("leaderboard-page").style.display = "";
-  } else if (page_num == 4) {
-    g("leaderboard-page").style.display = "";
-}
-const url = window.location.search;
-const params = new URLSearchParams(url);
-if (params.get("u")) {
-  open_page(3);
-  open_player(params.get("u"));
-}
