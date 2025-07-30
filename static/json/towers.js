@@ -350,4 +350,4 @@ var all_towers = [
 {"id": 348, "name": "Tower of Obbyist's League", "diff": 820, "places": [["AHoSCT", "Spot 1"]]},
 {"id": 349, "name": "Steeple of Winds Away", "diff": 866, "places": [["AHoSCT", "Spot 1"]]},
 {"id": 350, "name": "Tower of Movin' Right Along", "diff": 868, "places": [["DEToH", "District 1"]], "game": "https://www.roblox.com/games/93937373882306"},
-
+    ]
