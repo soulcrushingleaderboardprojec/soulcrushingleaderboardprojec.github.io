@@ -1,5 +1,5 @@
 var all_towers = [
-    {"id": 1, "name": "Tower of Double Trouble", "diff": 800, "places": [["EToH", "Zone 2"]]},
+{"id": 1, "name": "Tower of Double Trouble", "diff": 800, "places": [["EToH", "Zone 2"]]},
 {"id": 2, "name": "Tower of Difficulty Chart", "diff": 808, "places": [["EToH", "Ring 2"]]},
 {"id": 3, "name": "Thanos Tower", "diff": 813, "places": [["EToH", "Ring 1"]]},
 {"id": 4, "name": "Tower of High Adrenaline", "diff": 816, "places": [["EToH", "Ring 9"]]},
@@ -250,7 +250,7 @@ var all_towers = [
 {"id": 248, "name": "Tower of Choking Dread", "diff": 875, "places": [["TEA", "Pit of Misery"]]},
 {"id": 249, "name": "Tower of Something Unholy", "diff": 902, "places": [["TEA", "Pit of Misery"]]},
 {"id": 250, "name": "Tower of Acrid Rain", "diff": 926, "places": [["TEA", "Pit of Misery"]]},
-    {"id": 251, "name": "Tower of Everlasting Darkness", "diff": 1022, "places": [["TEA", "Timeless Manor"]], "game": "https://www.roblox.com/games/4899600584"},
+{"id": 251, "name": "Tower of Everlasting Darkness", "diff": 1022, "places": [["TEA", "Timeless Manor"]], "game": "https://www.roblox.com/games/4899600584"},
 {"id": 252, "name": "Tower of Two Layered Terror", "diff": 981, "places": [], "game": "https://www.roblox.com/games/15172639224"},
 {"id": 253, "name": "Tower of Architectural Agony", "diff": 1029, "places": [["ZToA", "Melodic Moon"]]},
 {"id": 254, "name": "Tower of Specific and Precise Positioning", "diff": 1015, "places": [["AHoSCT", "Spot 4"]]},
@@ -349,5 +349,5 @@ var all_towers = [
 {"id": 347, "name": "Tower of Incoherent Insanity", "diff": 823, "places": [["LToD", "Ring 2"]]},
 {"id": 348, "name": "Tower of Obbyist's League", "diff": 820, "places": [["AHoSCT", "Spot 1"]]},
 {"id": 349, "name": "Steeple of Winds Away", "diff": 866, "places": [["AHoSCT", "Spot 1"]]},
-{"id": 350, "name": "Tower of Movin' Right Along", "diff": 868, "places": [["DEToH", "District 1"]], "game": "https://www.roblox.com/games/93937373882306"}
+{"id": 350, "name": "Tower of Movin' Right Along", "diff": 868, "places": [["DEToH", "District 1"]], "game": "https://www.roblox.com/games/93937373882306"},
 
