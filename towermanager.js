@@ -9,7 +9,7 @@ var all_completions = [
   {"name": "robloxfan5964", "completions": [9]},
   {"name": "TheHaloDeveloper", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 16, 18, 20, 24, 28, 29, 30, 31, 45, 56, 65, 111, 158, 172, 342, 458, 627]},
   {"name": "LoveliestJacob", "completions": [1, 2, 3, 8, 23]},
-  {"name": "Mlg_MemeGod", "completions": [1, 2, 3, 7, 8, 10, 15, 22, 63, 158]},
+  {"name": "Mlg_MemeGod", "completions": [1, 2, 3, 7, 8, 9, 10, 11, 15, 16, 22, 28, 63, 114, 123, 158]},
   {"name": "smashultimate68", "completions": [1, 13]},
   {"name": "FelinesGoneFaster", "completions": [1, 6, 9, 10, 17, 18, 25, 28, 32, 57, 65, 70, 114]},
   {"name": "markoj_v", "completions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 37, 38, 39, 41, 42, 43, 44, 45, 47, 49, 50, 51, 56, 57, 82, 138, 141]},
