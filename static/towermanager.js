@@ -2,17 +2,13 @@ const credits = {
     "Owner": ["thej10n"],
     "Co-Owner": ["Z_Exzer"],
     "Developers": ["TheHaloDeveloper"],
-    "Managers": ["PrestigeUE", "ThePhantomDevil666", "Spitfire_YT5", "XChocolateMLGX", "jarofjam_14", "DJdestroyer916539", "vt_et", "jumper101110"],
+    "Managers": ["XChocolateMLGX", "vt_et", "Spitfire_YT5", "jumper101110", "ThePhantomDevil666", "jarofjam_14", "DJdestroyer916539"],
     "Trial Staff": ["..."],
     "Former Staff": ["arthraix"]
 }
 
 for (let [role, users] of Object.entries(credits)) {
     $("#credits").append(`<h3><div class="${role.toLowerCase().replaceAll(" ", "-")}">[${role}]</div>${users.join(", ")}</h3>`);
-}
-
-function formatNumber(num) {
-    return new Intl.NumberFormat().format(num);
 }
 
 function getAbbr(x) {
@@ -28,10 +24,10 @@ function getAbbr(x) {
 }
 
 all_towers.sort((a, b) => b["id"] - a["id"]);
-all_towers.sort((a, b) => b["difficulty"] - a["difficulty"]);
+all_towers.sort((a, b) => b["diff"] - a["diff"]);
 for (let t = 0; t < all_towers.length; t++) {
     all_towers[t]["rank"] = t + 1;
-    all_towers[t]["exp"] = Math.floor((3 ** ((all_towers[t]["difficulty"] - 800) / 100)) * 100);
+    all_towers[t]["exp"] = Math.floor((3 ** ((all_towers[t]["diff"] - 800) / 100)) * 100);
 
     if (all_towers[t]["game"] != null) {
         all_towers[t]["places"].push(["Place", ""])
@@ -40,7 +36,7 @@ for (let t = 0; t < all_towers.length; t++) {
 
 var towers = all_towers;
 for (let player = 0; player < all_completions.length; player++) {
-    all_completions[player]["exp"] = get_total_exp(all_completions[player]["username"]);
+    all_completions[player]["exp"] = get_total_exp(all_completions[player]["name"]);
 }
 
 all_completions.sort((a, b) => b["exp"] - a["exp"]);
@@ -50,13 +46,17 @@ for (let player = 0; player < all_completions.length; player++) {
 var completions = all_completions;
 var games = all_games;
 
-$("#sclp-tower-search").on("input", function () {
-    towers = search($(this).val());
-    list_towers();
-});
+$("#sclp-tower-search").on("keypress", function(event) {
+    if (event.key == "Enter") {
+        towers = search($("#sclp-tower-search").val());
+        list_towers();
+    }
+})
 $("#sclp-player-search").on("keypress", function(event) {
-    completions = psearch($(this).val());
-    list_players();
+    if (event.key == "Enter") {
+        completions = psearch($("#sclp-player-search").val());
+        list_players();
+    }
 })
 
 function difficulty_to_name(d) {
@@ -81,6 +81,10 @@ function difficulty_to_range(d) {
     return "Peak";
 }
 
+function format_difficulty(d) {
+    s = d.toString();
+    return s.slice(0, s.length - 2) + "," + s.slice(s.length - 2, s.length + 1);
+}
 function format_location(tower, start, end) {
     let places = tower["places"].slice(start, end);
     let game = tower["game"];
@@ -128,7 +132,7 @@ function search(s) {
     for (let tower_search = 0; tower_search < all_towers.length; tower_search++) {
         let tower = all_towers[tower_search];
         if (getAbbr(tower["name"]).toLowerCase().includes(s.toLowerCase()) || tower["name"].toLowerCase().includes(s.toLowerCase())) {
-            if (allowed_difficulties.includes(Math.floor(tower["difficulty"] / 100))
+            if (allowed_difficulties.includes(Math.floor(tower["diff"] / 100))
             && (place_filter == "" || is_tower_in_place(tower["places"], place_filter))) {
             new_towers.push(tower)
             }
@@ -158,10 +162,9 @@ function open_extra(id) {
     var tower = tower_from_id(id);
     let other_locations = tower["places"].length > 1 ? `<br><i id="small">Other Locations: ${format_location(tower, 1, tower["places"].length)}</i>` : "";
     
-    let diff = difficulty_to_name(tower["difficulty"]);
     var extra = `
         <p id="big"><b>(${getAbbr(tower["name"])})</b> ${tower["name"]}</p>
-        <br>Difficulty: <span class="${diff}" style="display: inline; width: auto; padding: 0;">${difficulty_to_range(tower["difficulty"])} ${diff}</span> (${formatNumber(tower["difficulty"] / 100)})
+        <br>Difficulty: ${difficulty_to_range(tower["diff"])} ${difficulty_to_name(tower["diff"])} (${format_difficulty(tower["diff"])})
         <br>Location: ${format_location(tower, 0, 1)}
         ${other_locations}
         <br>Rank: #${tower["rank"]}
@@ -183,12 +186,12 @@ function list_towers() {
             t_id = towers[i]["id"];
             t_name = towers[i]["name"];
             t_abbr = getAbbr(t_name);
-            t_diff = towers[i]["difficulty"];
+            t_diff = towers[i]["diff"];
             t_area = towers[i]["places"];
             t_rank = towers[i]["rank"];
             t_exp = towers[i]["exp"];
             t += "<div id='item'>";
-            t += "<span class='" + difficulty_to_name(t_diff) + "'>#" + t_rank + "</span>";
+            t += "<span id='" + difficulty_to_name(t_diff) + "'>#" + t_rank + "</span>";
             
             if (comp_data.includes(t_id)) {
                 t += "<button id='tower-button-crossed' onclick='open_extra(" + t_id + ")'><b><s>" + t_name + "</s></b></button>";
@@ -198,7 +201,7 @@ function list_towers() {
 
             if ($("#extra-tower-info").prop("checked")) {
                 t += "<i id='small'><br><span></span>";
-                t += "(" + formatNumber(t_diff / 100) + " - " + t_area[0][0] + " - " + t_exp + " EXP)</i>";
+                t += "(" + format_difficulty(t_diff) + " - " + t_area[0][0] + " - " + t_exp + " EXP)</i>";
             }
             t += "</div>";
         }
@@ -207,17 +210,17 @@ function list_towers() {
             t_id = towers[i]["id"];
             t_name = towers[i]["name"];
             t_abbr = getAbbr(t_name);
-            t_diff = towers[i]["difficulty"];
+            t_diff = towers[i]["diff"];
             t_area = towers[i]["places"];
             t_rank = towers[i]["rank"];
             t_exp = towers[i]["exp"];
 
             t += "<div id='item'>";
-            t += "<span class='" + difficulty_to_name(t_diff) + "'>#" + t_rank + "</span>";
+            t += "<span id='" + difficulty_to_name(t_diff) + "'>#" + t_rank + "</span>";
             t += "<button id='tower-button' onclick='open_extra(" + t_id + ")'><b>" + t_name + "</b></button>";
             if ($("#extra-tower-info").prop("checked")) {
                 t += "<i id='small'><br><span></span>";
-                t += "(" + formatNumber(t_diff / 100) + " - " + t_area[0][0] + " - " + t_exp + " EXP)</i>";
+                t += "(" + format_difficulty(t_diff) + " - " + t_area[0][0] + " - " + t_exp + " EXP)</i>";
             }
             t += "</div>";
         }
@@ -229,7 +232,7 @@ list_towers();
 // player leaderboard
 function player_from_name(name) {
     for (let i = 0; i < all_completions.length; i++) {
-        if (all_completions[i]["username"] == name) {
+        if (all_completions[i]["name"] == name) {
             return all_completions[i];
         }
     }
@@ -275,7 +278,7 @@ function psearch(s) {
     new_players = [];
     for (let player_search = 0; player_search < all_completions.length; player_search++) {
         player = all_completions[player_search];
-        if (player["username"].toLowerCase().includes(s.toLowerCase())) {
+        if (player["name"].toLowerCase().includes(s.toLowerCase())) {
             new_players.push(player)
         }
     }
@@ -285,7 +288,7 @@ function psearch(s) {
 function get_towers_within_range(towers, minimum, maximum) {
     let towers_within_range = [];
     for (let i = 0; i < towers.length; i++) {
-        if (minimum <= towers[i]["difficulty"] && towers[i]["difficulty"] <= maximum) {
+        if (minimum <= towers[i]["diff"] && towers[i]["diff"] <= maximum) {
             towers_within_range.push(towers[i]);
         }
     }
@@ -308,7 +311,7 @@ function format_comps(c) {
         if (c.includes(all_towers[t]["id"])) {
             let tower = all_towers[t];
 
-            f += "<span class='" + difficulty_to_name(tower["difficulty"]) + "'>#" + tower["rank"] + "</span>";
+            f += "<span id='" + difficulty_to_name(tower["diff"]) + "'>#" + tower["rank"] + "</span>";
             f += "<button id='tower-button' onclick='open_page(\"Towers\");open_extra(" + tower["id"] + ")'><b>" + tower["name"] + "</b></button>";
             f += "<br>";
             rank++;
@@ -318,7 +321,7 @@ function format_comps(c) {
 }
 
 function format_ratio(a, b) {
-    return `<span class="difficulty-display">${a}/${b}</span><span class="difficulty-display">${formatNumber(((a / b) * 100).toFixed(2))}%</span>`;
+    return "<span class='difficulty-display'>" + a + "/" + b + "</span><span class='difficulty-display'>" + Math.floor((a / b) * 100) + "," + "0".repeat(2 - Math.floor(((a / b) * 10000) % 100).toString().length) + Math.floor((a / b) * 10000) % 100 + "%</span>";
 }
 
 function open_player(name) {
@@ -327,7 +330,7 @@ function open_player(name) {
 
     let role = "";
     for (let [r, users] of Object.entries(credits)) {
-        if (users.includes(player["username"])) {
+        if (users.includes(player["name"])) {
             role = `<p class="${r.toLowerCase().replaceAll(" ", "-")}">${r}</p>`;
             break;
         }
@@ -336,16 +339,16 @@ function open_player(name) {
     var extra = `
         <p id="big"><b>${name}</b></p>
         ${role}
-        <br>Total EXP: ${formatNumber(player["exp"])}
+        <br>Total EXP: ${player["exp"]}
         <br>Level: ${format_level(player["exp"])}
         <br>Rank: #${player["rank"]}
         <br><a href="https://${completion_link}">${completion_link}</a>
         <br><br><b id='big'>Stats</b><br><br>
-        <span class='difficulty-display' style="width: 3em;"><b>TOTAL</b></span> ${format_ratio(player["completions"].length, all_towers.length)}
+        <span class='difficulty-display'><b>TOTAL</b></span> ${format_ratio(player["completions"].length, all_towers.length)}
     `;
 
     for (let d = 8; d < 14; d++) {
-        extra += `<br><span class="${difficulty_to_name(d * 100)}" class="difficulty-display">${difficulty_to_name(d * 100)}</span> ${format_ratio(get_towers_within_range(get_completed_data(player["completions"]), d * 100, (d * 100) + 99).length, get_towers_within_range(all_towers, d * 100, (d * 100) + 99).length)}`;
+        extra += `<br><span id="${difficulty_to_name(d * 100)}" class="difficulty-display">${difficulty_to_name(d * 100)}</span> ${format_ratio(get_towers_within_range(get_completed_data(player["completions"]), d * 100, (d * 100) + 99).length, get_towers_within_range(all_towers, d * 100, (d * 100) + 99).length)}`;
     }
     
     extra += "<br><br><b id='big'>Completions</b><br><br>";
@@ -355,7 +358,7 @@ function open_player(name) {
 function list_players() {
     var p = "<br>";
     for (let i = 0; i < completions.length; i++) {
-        let p_name = completions[i]["username"];
+        let p_name = completions[i]["name"];
         let p_comps = completions[i]["completions"];
         let p_exp = completions[i]["exp"];
         let p_rank = completions[i]["rank"];
