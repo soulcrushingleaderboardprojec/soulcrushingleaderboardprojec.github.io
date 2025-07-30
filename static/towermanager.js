@@ -439,7 +439,7 @@ if (params.get("u")) {
     open_player(params.get("u"));
 }
 
-let old_url = "soulcrushingleaderboardproject.github.io";
+let old_url = "soulcrushingleaderboardprojec.github.io";
 if (window.location.hostname == old_url) {
-    window.location.href = window.location.href.replace(old_url, "sclp.vercel.app");
+    window.location.href = window.location.href.replace(old_url, "soulcrushingleaderboardprojec.vercel.app");
 }
