@@ -722,4 +722,9 @@ var all_towers = [
 {"id": 721, "name": "Tower of Mc Donald", "diff": 1082, "places": [["ToS", "Dad Desert"]]},
 {"id": 722, "name": "Tower of Narrowing Space", "diff": 802, "places": [[]], "game": "https://www.roblox.com/games/17040084698"},
 {"id": 723, "name": "Tower of Past Forward", "diff": 803, "places": [["TWR$", "Ring 4"]]},
+{"id": 724, "name": "Tower of Nonsense", "diff": 887, "places": [["TWR$", "Ring 4.5"]]},
+{"id": 725, "name": "Tower of Layering Torment", "diff": 1080, "places": [["TWR$", "Ring 4"]]},
+{"id": 726, "name": "Tower of Chaos Mountain", "diff": 1023, "places": [["TWR$", "Ring 4.5"]]},
+{"id": 727, "name": "Citadel of Glitching and Healing", "diff": 809, "places": [["EXL", "Ring 5"]]},
+{"id": 728, "name": "Citadel of Icy Blizzards", "diff": 938, "places": [["EXL", "Ring 5"]]},
 ]
