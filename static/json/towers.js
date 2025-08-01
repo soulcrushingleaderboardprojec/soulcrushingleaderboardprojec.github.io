@@ -972,5 +972,5 @@ var all_towers = [
 {"id": 967, "name": "Steeple of Anointed Violence", "diff": 838, "places": [[]], "game": "https://www.roblox.com/games/86429610187668"},
 {"id": 968, "name": "Tower of Pure Intimidation", "diff": 826, "places": [["SET", "Ring 2"]]},
 {"id": 969, "name": "Tower of Pushin o' Plenty", "diff": 863, "places": [["VOT", "Planet 2"]]},
-{"id": 970, "name": "Tower of Pain and Agony", "diff": 805, "places": [["SET", "Ring 1"]]}
+{"id": 970, "name": "Tower of Pain and Agony", "diff": 805, "places": [["SET", "Ring 1"]]},
 ]
