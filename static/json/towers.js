@@ -995,5 +995,4 @@ var all_towers = [
 {"id": 983, "name": "Tower of Dexterity", "diff": 831, "places": [[]], "game": "https://www.roblox.com/games/9379888150"},
 {"id": 984, "name": "Tower of Boundless Execration", "diff": 829, "places": [[]], "game": "https://www.roblox.com/games/13127526103"},
 {"id": 985, "name": "Citadel of Ultimate Symmetry", "diff": 817, "places": [[]], "game": "https://www.roblox.com/games/6572919498"},
-
 ]
