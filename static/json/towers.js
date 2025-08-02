@@ -684,4 +684,7 @@ all_towers = [
   {"id": 683, "abbr": "ToFC", "name": "Tower of Fractured Complex", "diff": 1019, "places": [["AHoSCT", "Spot 4B"]]},
   {"id": 684, "abbr": "ToSUS", "name": "Tower of Spiced Up Sand", "diff": 1074, "places": [["AHoSCT", "Spot 4B"]]},
   {"id": 685, "abbr": "ToC", "name": "Tower of Complexitivity", "diff": 1146, "places": [], "game": "https://www.roblox.com/games/91976876613808/Tower-of-Complexitivity"},
+  {"id": 689, "abbr": "ToAD", "name": "Tower of Accepting Defeat", "diff": 875, "places": [["TEA,Timeless Manor"]]},
+  {"id": 690, "abbr": "ToTC", "name": "Tower of True Confusion", "diff": 856, "places": [["TEA,Timeless Manor"]]},
+  {"id": 691, "abbr": "ToQTP", "name": "Tower of Quadruple the Pain", "diff": 905, "places": [["TEA,Timeless Manor"]]},
 ]
