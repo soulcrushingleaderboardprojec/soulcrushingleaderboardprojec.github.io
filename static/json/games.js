@@ -23,7 +23,7 @@ var all_games = [
 {"abbr": "EB", "name": "EToH B-Sides", "link": "https://www.roblox.com/games/15614018993"},
 {"abbr": "EnToH", "name": "Envision's Towers of Hell", "link": "https://www.roblox.com/games/6209129635"},
 {"abbr": "EToE", "name": "Exwum's Towers of Expertise", "link": "https://www.roblox.com/games/6211616001"},
-{"abbr": "EToH", "name": "Eternal Towers of Hell", "link": "https://www.roblox.com/games/8562822414"},
+{"abbr": "JToH", "name": "Juke's Towers of Hell", "link": "https://www.roblox.com/games/8562822414"},
 {"abbr": "EXL", "name": "EToH XL", "link": "https://www.roblox.com/games/13218032675"},
 {"abbr": "EXS", "name": "EToH XS Project", "link": "https://www.roblox.com/games/18358123333"},
 {"abbr": "EXXL", "name": "EToH XXL", "link": "https://www.roblox.com/games/17846926884"},
